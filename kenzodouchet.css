@@ -1,5 +1,4 @@
 body {
-  margin: 0 !important;
   font-family: monospace;
   color: yellowgreen;
   background-color: #171717;
@@ -9,7 +8,7 @@ body {
   justify-content: space-between;
   padding: 30px;
 }
-.nav .logo span {
+.nav .logo {
   font-size: 30px;
   border-right: .15em solid #00ffcc;
   white-space: nowrap;
@@ -32,14 +31,43 @@ body {
   color: black;
 }
 .main {
-  margin: 100px;
-}
+  display: flex;
+  row-gap: 50px;
+  flex-direction: column;
+  margin-top: 0 !important;
+  margin: 100px !important;
 
-.main .presentation {
+}
+.main .title {
   text-align: center;
-  margin-top: 50px;
+  margin: 0;
+}
+.main .block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
 }
 
+.main .block .image {
+  width: 270px;
+  height: 270px;
+  border-radius: 100%;
+}
+
+.main .block .paragraph {
+  font-size: 18px;
+  margin: 0 !important;
+}
+
+.footer {
+  text-align: center;
+  margin: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
 
 /* Animation */
 
