@@ -163,9 +163,9 @@ a:visited {
 
 @keyframes fadeIn2 {
   0% {
-    opacity: 0; /* Au début, l'élément est invisible */
+    opacity: 0; 
   }
   100% {
-    opacity: 1; /* À la fin, l'élément est complètement visible */
+    opacity: 1; 
   }
 }
