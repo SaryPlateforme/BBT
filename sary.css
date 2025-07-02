@@ -4,6 +4,13 @@ body {
   color: yellowgreen;
   background-color: #171717;
 }
+
+/* navigation */
+
+ul{
+    list-style: none;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -32,7 +39,37 @@ body {
   color: grey;
 }
 
+/* main section */
 
+.main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+
+/* profile section */
+
+.profileDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.profileDiv img{
+    width: 30%;
+    border-radius: 50%;
+}
+
+.profileDiv p{
+    width: 40%;
+}
+
+/* second section */
+
+/* keyframes */
 
 @keyframes pulse {
   0% { transform: scale(1); }
