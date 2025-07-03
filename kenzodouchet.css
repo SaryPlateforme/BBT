@@ -3,11 +3,13 @@ body {
   color: yellowgreen;
   background-color: #171717;
 }
+
 .nav {
   display: flex;
   justify-content: space-between;
   padding: 30px;
 }
+
 .nav .logo {
   font-size: 30px;
   border-right: .15em solid #00ffcc;
@@ -16,20 +18,26 @@ body {
   display: inline-block;
   animation: typing 2s steps(4) 1, blink 0.7s step-end infinite;
 }
+
 .nav .nav-items {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
+  margin: 0 !important;
+  list-style: none;
 }
+
 .nav .nav-items a {
   font-size: 20px;
   text-decoration: none;
   color: yellowgreen;
 }
+
 .nav .nav-items a:hover {
   color: black;
 }
+
 .main {
   display: flex;
   row-gap: 50px;
@@ -38,10 +46,12 @@ body {
   margin: 100px !important;
 
 }
+
 .main .title {
   text-align: center;
   margin: 0;
 }
+
 .main .block {
   display: flex;
   flex-direction: row;
@@ -69,20 +79,50 @@ body {
   font-weight: bold;
 }
 
+
+/* Responsive */
+
+
+@media screen and (max-width: 768px) {
+  .nav .nav-items {
+    flex-direction: column;
+  }
+  .main .block {
+    flex-direction: column;
+  }
+}
+
+
+
 /* Animation */
 
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 4ch }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 4ch
+  }
 }
 
 @keyframes blink {
-  50% { border-color: transparent; }
+  50% {
+    border-color: transparent;
+  }
 }
