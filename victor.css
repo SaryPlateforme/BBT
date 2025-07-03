@@ -108,7 +108,7 @@ em {
 .list-element_item {
     display: flex;
     flex-direction: column;
-    margin: 0 2rem;
+    margin: 0 1.5rem;
     align-items: center;   
     list-style: none; 
 }
