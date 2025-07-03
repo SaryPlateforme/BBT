@@ -66,13 +66,16 @@ body {
   width: 270px;
   height: 270px;
   border-radius: 100%;
+  border: 3px solid yellowgreen;
 }
 
 .container .block .paragraph {
   font-size: 18px;
   margin: 0 !important;
 }
-
+.container .block:nth-child(odd) {
+  flex-direction: row-reverse !important;
+}
 .footer {
   text-align: center;
   margin: 20px;
@@ -116,8 +119,10 @@ body {
   .container .block {
     flex-direction: column;
   }
+  .container .block:nth-child(odd) {
+    flex-direction: column !important;
+  }
 }
-
 
 
 /* Animation */
