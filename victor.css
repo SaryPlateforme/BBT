@@ -1,0 +1,99 @@
+body {
+  margin: 0 !important;
+  font-family: monospace;
+  color: yellowgreen;
+  background-color: #171717;
+}
+
+/* HEADER */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+.nav .logo span {
+  font-size: 30px;
+  border-right: .15em solid #00ffcc;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: typing 2s steps(4) 1, blink 0.7s step-end infinite;
+}
+.nav .nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.nav .nav-items a {
+  font-size: 20px;
+  text-decoration: none;
+  color: yellowgreen;
+}
+.nav .nav-items a:hover {
+  color: grey;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 4ch }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* MAIN */
+main {
+    display: flex;
+    width: 80%;
+    margin: 3rem auto 0;
+}
+
+.container-right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+em {
+    font-size: 2rem;
+}
+
+.title {
+    font-size: 6rem;
+}
+
+.avatar {
+    display: block;
+    margin: auto;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+    border: solid 2px green
+}
+
+.information {
+    font-size: 2rem;
+}
+
+.list-element {
+    display: flex;
+}
+
+.list-element_item {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-element {
+    height: 5rem;
+    width: 5rem;
+}
+
