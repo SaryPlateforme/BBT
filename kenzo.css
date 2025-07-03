@@ -60,6 +60,11 @@ body {
   align-items: center;
   gap: 20px;
   padding: 50px;
+  border-bottom: 1px solid yellowgreen;
+}
+
+.container .block:last-child {
+  border: 0 !important;
 }
 
 .container .block .image {
@@ -77,10 +82,29 @@ body {
   flex-direction: row-reverse !important;
 }
 .footer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 20px;
   font-size: 15px;
   font-weight: bold;
+  gap: 20px;
+
+}
+.footer .link {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.footer .link a {
+  color: yellowgreen;
+  text-decoration: none;
+  font-size: 25px;
+
+}
+.footer .link a:hover {
+  color: #719724;
 }
 
 .hamburger {
@@ -92,8 +116,31 @@ body {
   display: none;
 }
 
-/* Responsive */
+/* Scrollbar */
 
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* Fond de la scrollbar (la "track") */
+::-webkit-scrollbar-track {
+  background: #6b8f23;
+}
+
+/* La "thumb" (la partie qu'on peut glisser) */
+::-webkit-scrollbar-thumb {
+  background-color: yellowgreen;
+
+}
+
+/* Au survol de la thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9acd32;
+}
+
+/* Responsive */
 
 @media screen and (max-width: 768px) {
   .nav {
@@ -124,9 +171,7 @@ body {
   }
 }
 
-
 /* Animation */
-
 
 @keyframes pulse {
   0% {
