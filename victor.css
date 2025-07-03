@@ -82,6 +82,18 @@ em {
     border: solid 1rem yellowgreen
 }
 
+.list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list > li::before {
+    content: "✦ ";
+    color: yellowgreen;
+    margin-right: 8px;
+    font-size: 1.2em;
+  }
+
 .information {
     font-size: 2rem;
     margin: 1rem auto;
@@ -89,18 +101,79 @@ em {
 
 .list-element {
     display: flex;
-    margin-top: 2rem;
+    margin-top: 2rem; 
+    list-style: none;  
 }
 
 .list-element_item {
     display: flex;
     flex-direction: column;
     margin: 0 2rem;
-    align-items: center;}
+    align-items: center;   
+    list-style: none; 
+}
 
 .logo-element {
     height: 5rem;
     width: 5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem;    
+}
+
+.element-name {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        width: 90%;
+        gap: 2rem;
+    }
+
+    .title {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    em {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .avatar {
+        height: 15rem;
+        width: 15rem;
+    }
+
+    .list > li {
+      text-align: start;
+    }
+
+    .information {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .list-element {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 1.5rem;
+    }
+
+    .list-element_item {
+        margin: 2rem 1rem;
+    }
+
+    .logo-element {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    .element-name {
+        font-size: 1.3rem;
+    }
 }
 
