@@ -159,11 +159,11 @@ main {
 
 
 #Mathieu{
-    background-image: url('img_mathieu/moi.jpg');
+    background-image: url('../img/img_mathieu/moi.jpg');
 }
 
 #Victor {
-    background-image: url('img_mathieu/victor.jpg');
+    background-image: url('../img/victor.jpg');
 }
 
 .bbt_photo:hover {
