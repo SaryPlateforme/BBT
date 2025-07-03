@@ -3,6 +3,7 @@ body {
   font-family: monospace;
   color: yellowgreen;
   background-color: #171717;
+  padding-bottom: 30px;
 }
 
 /* navigation */
@@ -16,7 +17,7 @@ ul{
   justify-content: space-between;
   padding: 30px;
 }
-.nav .logo span {
+.nav span {
   font-size: 30px;
   border-right: .15em solid #00ffcc;
   white-space: nowrap;
@@ -38,6 +39,14 @@ ul{
 .nav .nav-items a:hover {
   color: grey;
 }
+.hamburger {
+  color: yellowgreen;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
 
 /* main section */
 
@@ -56,6 +65,7 @@ ul{
     justify-content: center;
     align-items: center;
     gap: 5%;
+    flex-wrap: wrap;
 }
 
 .profileDiv img{
@@ -84,4 +94,30 @@ ul{
 
 @keyframes blink {
   50% { border-color: transparent; }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column !important;
+  }
+  .nav .logo {
+    width: 70px;
+  }
+  .nav .nav-items {
+    flex-direction: column;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+  }
+  .container {
+    margin: 20px !important;
+  }
+  .d-none {
+    display: none !important;
+  }
+  .container .block {
+    flex-direction: column;
+  }
 }
