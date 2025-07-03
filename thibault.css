@@ -1,11 +1,41 @@
 body{
-    background-color: #561F37;
+    background-color: #171717;
     text-align: center;
-    color: whitesmoke;
+    color: yellowgreen;
     margin: 30px;
     font-weight: bold;
     font-size: 20px;
     font-family: monospace;
+}
+ul{
+    list-style: none;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+.nav .logo span {
+  font-size: 30px;
+  border-right: .15em solid #00ffcc;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: typing 2s steps(4) 1, blink 0.7s step-end infinite;
+}
+.nav .nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.nav .nav-items a {
+  font-size: 20px;
+  text-decoration: none;
+  color: yellowgreen;
+}
+.nav .nav-items a:hover {
+  color: grey;
 }
 .profil{
     display: flex;
@@ -16,7 +46,6 @@ body{
 img{
     border-radius: 50%;
     size: 20%;
-
 }
 li{
     list-style-type:none;
