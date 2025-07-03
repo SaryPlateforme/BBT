@@ -1,0 +1,204 @@
+body {
+  font-family: monospace;
+  color: yellowgreen;
+  background-color: #171717;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  margin: 0 !important;
+}
+
+.nav .logo {
+  font-size: 30px;
+  border-right: .15em solid #00ffcc;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: typing 2s steps(4) 1, blink 0.7s step-end infinite;
+}
+
+.nav .nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 0 !important;
+  list-style: none;
+}
+
+.nav .nav-items a {
+  font-size: 20px;
+  text-decoration: none;
+  color: yellowgreen;
+}
+
+.nav .nav-items a:hover {
+  color: #719724;
+}
+
+.container {
+  display: flex;
+  row-gap: 50px;
+  flex-direction: column;
+  margin-top: 0 !important;
+  margin: 100px !important;
+
+}
+
+.container .title {
+  text-align: center;
+  margin: 0;
+}
+
+.container .block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 50px;
+  border-bottom: 1px solid yellowgreen;
+}
+
+.container .block:last-child {
+  border: 0 !important;
+}
+
+.container .block .image {
+  width: 270px;
+  height: 270px;
+  border-radius: 100%;
+  border: 3px solid yellowgreen;
+}
+
+.container .block .paragraph {
+  font-size: 18px;
+  margin: 0 !important;
+}
+.container .block:nth-child(odd) {
+  flex-direction: row-reverse !important;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  gap: 20px;
+
+}
+.footer .link {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.footer .link a {
+  color: yellowgreen;
+  text-decoration: none;
+  font-size: 25px;
+
+}
+.footer .link a:hover {
+  color: #719724;
+}
+
+.hamburger {
+  color: yellowgreen;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Scrollbar */
+
+/* Largeur de la scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* Fond de la scrollbar (la "track") */
+::-webkit-scrollbar-track {
+  background: #6b8f23;
+}
+
+/* La "thumb" (la partie qu'on peut glisser) */
+::-webkit-scrollbar-thumb {
+  background-color: yellowgreen;
+
+}
+
+/* Au survol de la thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #9acd32;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column !important;
+  }
+  .nav .logo {
+    width: 70px;
+  }
+  .nav .nav-items {
+    flex-direction: column;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+  }
+  .container {
+    margin: 20px !important;
+  }
+  .d-none {
+    display: none !important;
+  }
+  .container .block {
+    flex-direction: column;
+  }
+  .container .block:nth-child(odd) {
+    flex-direction: column !important;
+  }
+}
+
+/* Animation */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 4ch
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
