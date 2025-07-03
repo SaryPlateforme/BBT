@@ -14,8 +14,9 @@ ul{
   display: flex;
   justify-content: space-between;
   padding: 30px;
+  margin: 0 !important;
 }
-.nav .logo span {
+.nav .logo {
   font-size: 30px;
   border-right: .15em solid #00ffcc;
   white-space: nowrap;
@@ -28,6 +29,8 @@ ul{
   justify-content: center;
   align-items: center;
   gap: 50px;
+  margin: 0 !important;
+  list-style: none;
 }
 .nav .nav-items a {
   font-size: 20px;
@@ -45,8 +48,79 @@ ul{
 }
 img{
     border-radius: 50%;
-    size: 20%;
+    width: 350px;
+    border: thick double yellowgreen;
 }
 li{
     list-style-type:none;
+    
+}
+.network li{
+    display: inline;
+}
+.network a{
+    color: yellowgreen;
+}
+.hamburger {
+  color: yellowgreen;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 4ch }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 5vw;
+    }
+    img {
+        width: 50%;
+        margin-left: 10px;
+    }   
+    .profil h1 {
+        font-size: 5vw;
+    }
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column !important;
+  }
+  .nav .logo {
+    width: 70px;
+  }
+  .nav .nav-items {
+    flex-direction: column;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+  }
+  .container {
+    margin: 20px !important;
+  }
+  .d-none {
+    display: none !important;
+  }
+  .container .block {
+    flex-direction: column;
+  }
+  .container .block:nth-child(odd) {
+    flex-direction: column !important;
+  }
 }
