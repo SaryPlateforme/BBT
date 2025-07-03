@@ -94,3 +94,19 @@ document.getElementById('photo').addEventListener('click', function() {
 document.getElementById('modal').classList.add('show_modal');
 });
 
+document.getElementById('croix').addEventListener('click', function() {
+document.getElementById('modal').classList.add('close_modal');
+setTimeout(function () {
+    document.getElementById('modal').classList.remove('close_modal');
+    document.getElementById('modal').classList.remove('show_modal');
+  }, 2000);
+
+});
+
+
+const hamburger = document.querySelector("#hamburger");
+const nav = document.querySelector("#nav");
+
+hamburger.addEventListener('click', function() {
+  nav.classList.toggle('d-none');
+});
