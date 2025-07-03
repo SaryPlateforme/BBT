@@ -10,8 +10,10 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 30px;
+  margin: 0 !important;
 }
-.nav .logo span {
+
+.nav .logo {
   font-size: 30px;
   border-right: .15em solid #00ffcc;
   white-space: nowrap;
@@ -19,35 +21,35 @@ body {
   display: inline-block;
   animation: typing 2s steps(4) 1, blink 0.7s step-end infinite;
 }
+
 .nav .nav-items {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
+  margin: 0 !important;
+  list-style: none;
 }
+
 .nav .nav-items a {
   font-size: 20px;
   text-decoration: none;
   color: yellowgreen;
 }
+
 .nav .nav-items a:hover {
-  color: grey;
+  color: #719724;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+.hamburger {
+  color: yellowgreen;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 4ch }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
 
 /* MAIN */
 main {
@@ -73,14 +75,30 @@ em {
     text-align: center;
 }
 
+@keyframes shake-all-directions {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5px, -5px); }
+  20% { transform: translate(5px, -5px); }
+  30% { transform: translate(-5px, 5px); }
+  40% { transform: translate(5px, 5px); }
+  50% { transform: translate(-3px, -3px); }
+  60% { transform: translate(3px, -3px); }
+  70% { transform: translate(-3px, 3px); }
+  80% { transform: translate(3px, 3px); }
+  90% { transform: translate(0, 0); }
+}
+
 .avatar {
     display: block;
     margin: auto;
     height: 20rem;
     width: 20rem;
     border-radius: 50%;
-    border: solid 1rem yellowgreen
+    border: solid 1rem yellowgreen;
 }
+
+.avatar:hover {
+    animation: shake-all-directions 0.5s ease-in-out infinite;}
 
 .list {
     list-style: none;
@@ -113,10 +131,16 @@ em {
     list-style: none; 
 }
 
+
 .logo-element {
-    height: 5rem;
-    width: 5rem;
-    margin-bottom: 1rem;    
+  height: 5rem;
+  width: 5rem;
+  margin-bottom: 1rem;    
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-element:hover {
+  transform: scale(1.1);
 }
 
 .element-name {
@@ -126,6 +150,20 @@ em {
 }
 
 @media (max-width: 768px) {
+  .nav {
+    flex-direction: column !important;
+  }
+  .nav .logo {
+    width: 70px;
+  }
+  .nav .nav-items {
+    flex-direction: column;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+  }
     main {
         flex-direction: column;
         width: 90%;
@@ -175,5 +213,39 @@ em {
     .element-name {
         font-size: 1.3rem;
     }
+    .d-none {
+      display: none !important;
+    }
 }
 
+/* Animation */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 4ch
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
