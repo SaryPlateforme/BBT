@@ -10,8 +10,10 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 30px;
+  margin: 0 !important;
 }
-.nav .logo span {
+
+.nav .logo {
   font-size: 30px;
   border-right: .15em solid #00ffcc;
   white-space: nowrap;
@@ -19,41 +21,42 @@ body {
   display: inline-block;
   animation: typing 2s steps(4) 1, blink 0.7s step-end infinite;
 }
+
 .nav .nav-items {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
+  margin: 0 !important;
+  list-style: none;
 }
+
 .nav .nav-items a {
   font-size: 20px;
   text-decoration: none;
   color: yellowgreen;
 }
+
 .nav .nav-items a:hover {
-  color: grey;
+  color: #719724;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+.hamburger {
+  color: yellowgreen;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 4ch }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
 
 /* MAIN */
 main {
     display: flex;
     width: 80%;
     margin: 3rem auto 0;
+    gap: 4rem;
 }
 
 .container-right{
@@ -63,11 +66,26 @@ main {
 }
 
 em {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: bold;
 }
 
 .title {
     font-size: 6rem;
+    text-align: center;
+}
+
+@keyframes shake-all-directions {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5px, -5px); }
+  20% { transform: translate(5px, -5px); }
+  30% { transform: translate(-5px, 5px); }
+  40% { transform: translate(5px, 5px); }
+  50% { transform: translate(-3px, -3px); }
+  60% { transform: translate(3px, -3px); }
+  70% { transform: translate(-3px, 3px); }
+  80% { transform: translate(3px, 3px); }
+  90% { transform: translate(0, 0); }
 }
 
 .avatar {
@@ -76,24 +94,158 @@ em {
     height: 20rem;
     width: 20rem;
     border-radius: 50%;
-    border: solid 2px green
+    border: solid 1rem yellowgreen;
 }
+
+.avatar:hover {
+    animation: shake-all-directions 0.5s ease-in-out infinite;}
+
+.list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list > li::before {
+    content: "✦ ";
+    color: yellowgreen;
+    margin-right: 8px;
+    font-size: 1.2em;
+  }
 
 .information {
     font-size: 2rem;
+    margin: 1rem auto;
 }
 
 .list-element {
     display: flex;
+    margin-top: 2rem; 
+    list-style: none;  
 }
 
 .list-element_item {
     display: flex;
     flex-direction: column;
+    margin: 0 1.5rem;
+    align-items: center;   
+    list-style: none; 
 }
+
 
 .logo-element {
-    height: 5rem;
-    width: 5rem;
+  height: 5rem;
+  width: 5rem;
+  margin-bottom: 1rem;    
+  transition: transform 0.3s ease-in-out;
 }
 
+.logo-element:hover {
+  transform: scale(1.1);
+}
+
+.element-name {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column !important;
+  }
+  .nav .logo {
+    width: 70px;
+  }
+  .nav .nav-items {
+    flex-direction: column;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+  }
+    main {
+        flex-direction: column;
+        width: 90%;
+        gap: 2rem;
+    }
+
+    .title {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
+    em {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .avatar {
+        height: 15rem;
+        width: 15rem;
+    }
+
+    .list > li {
+      text-align: start;
+    }
+
+    .information {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .list-element {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 1.5rem;
+    }
+
+    .list-element_item {
+        margin: 2rem 1rem;
+    }
+
+    .logo-element {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    .element-name {
+        font-size: 1.3rem;
+    }
+    .d-none {
+      display: none !important;
+    }
+}
+
+/* Animation */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 4ch
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
