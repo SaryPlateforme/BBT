@@ -54,6 +54,7 @@ main {
     display: flex;
     width: 80%;
     margin: 3rem auto 0;
+    gap: 4rem;
 }
 
 .container-right{
@@ -63,11 +64,13 @@ main {
 }
 
 em {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: bold;
 }
 
 .title {
     font-size: 6rem;
+    text-align: center;
 }
 
 .avatar {
@@ -76,24 +79,28 @@ em {
     height: 20rem;
     width: 20rem;
     border-radius: 50%;
-    border: solid 2px green
+    border: solid 1rem yellowgreen
 }
 
 .information {
     font-size: 2rem;
+    margin: 1rem auto;
 }
 
 .list-element {
     display: flex;
+    margin-top: 2rem;
 }
 
 .list-element_item {
     display: flex;
     flex-direction: column;
-}
+    margin: 0 2rem;
+    align-items: center;}
 
 .logo-element {
     height: 5rem;
     width: 5rem;
+    margin-bottom: 1rem;
 }
 
