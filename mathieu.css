@@ -1,15 +1,17 @@
 body {
-  margin: 0 !important;
   font-family: monospace;
   color: yellowgreen;
   background-color: #171717;
 }
+
 .nav {
   display: flex;
   justify-content: space-between;
   padding: 30px;
+  margin: 0 !important;
 }
-.nav .logo span {
+
+.nav .logo {
   font-size: 30px;
   border-right: .15em solid #00ffcc;
   white-space: nowrap;
@@ -17,17 +19,22 @@ body {
   display: inline-block;
   animation: typing 2s steps(4) 1, blink 0.7s step-end infinite;
 }
+
 .nav .nav-items {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
+  margin: 0 !important;
+  list-style: none;
 }
+
 .nav .nav-items a {
   font-size: 20px;
   text-decoration: none;
   color: yellowgreen;
 }
+
 .nav .nav-items a:hover {
   color: rgb(255, 0, 0);
 }
@@ -138,7 +145,6 @@ a:visited {
   height: auto;
   width: 70%;
   background-color: rgb(255, 255, 255);
-  opacity: 0.8;
   position: absolute;
   z-index: 10;
   position: absolute;
@@ -155,6 +161,7 @@ a:visited {
   text-align: center;
   color: rgb(9, 90, 9);
   display: none;
+  opacity: 0.85; 
 
 }
 
@@ -168,6 +175,69 @@ a:visited {
     opacity: 0; 
   }
   100% {
-    opacity: 1; 
+    opacity: 0.85; 
+  }
+}
+
+.close_modal{
+  
+  animation: fadeOut 2s ease-in-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0.85; 
+  }
+  100% {
+    opacity: 0; 
+    display: none !important;
+  }
+}
+
+
+
+
+#croix{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hamburger {
+  color: yellowgreen;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    flex-direction: column !important;
+  }
+  .nav .logo {
+    width: 70px;
+  }
+  .nav .nav-items {
+    flex-direction: column;
+  }
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+  }
+  .container {
+    margin: 20px !important;
+  }
+  .d-none {
+    display: none !important;
+  }
+  .container .block {
+    flex-direction: column;
   }
 }
