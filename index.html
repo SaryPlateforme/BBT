@@ -6,6 +6,7 @@
     <title>BBT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/css/modal.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
@@ -44,13 +45,19 @@
       </nav>
     </header> -->
 
+    <div class="modal d-none" id="modal">
+      <div class="modal-container">
+        <button id="closeModal">X</button>
+        <h2 class="modal-title"></h2>
+
+        <div class="modal-img"></div>
+
+        <p class="modal-body"></p>
+      </div>
+    </div>
+
     <main>
-      <div class="container_photo">
-        <div class="modulebox">Sary</div>
-        <div class="modulebox">Thibault</div>
-        <div class="modulebox">Victor</div>
-        <div class="modulebox">Kenzo</div>
-        <div class="modulebox">Mathieu</div>
+      <div id="container-photo">
       </div>
     </main>
 
@@ -60,22 +67,61 @@
 
     <script type="module">
       import mock from "/js/mock.js";
+      const closeModal = document.querySelector("#closeModal");
+      const modal = document.querySelector("#modal");
 
-      let titre;
+      const titleM = document.querySelector(".modal-title");
+      const imgM = document.querySelector(".modal-img");
+      const bodyM = document.querySelector(".modal-body");
 
-      window.onclick = (e) => {
-        titre = e.target.innerText;
+      mock.forEach((item) => {
+        console.log(item.name);
+        
+        const div = document.createElement("div");
+        div.classList.add("modulebox");
+        div.innerText = item.name;
+        const container = document.querySelector("#container-photo");
+        container.appendChild(div);
+      });
+      const moduleBoxes = document.querySelectorAll(".modulebox");
 
-        let filterPerso = [];
+      moduleBoxes.forEach((box) => {
+        box.addEventListener("click", function (e) {
+          const titre = e.target.innerText;
+          const person = mock.find((x) => x.name === titre);
 
-        for (let i = 0; i < mock.length; i++) {
-          if (mock[i].name === titre) {
-            filterPerso = [mock[i]];
+          if (person) {
+            modal.classList.remove("d-none");
+
+            titleM.textContent = person.name;
+            imgM.innerHTML = `<img src="${person.img}" />`;
+            bodyM.textContent = person.text;
           }
-        }
+        });
+      });
+      closeModal.addEventListener("click", function () {
+        modal.classList.add("d-none");
+        openModal.classList.remove("d-none");
+      });
 
-        console.log(filterPerso);
-      };
+      // openModal.addEventListener("click", function (e) {
+      //   titre = e.target.innerText;
+
+      //   let filterPerso = [];
+
+      //   for (let i = 0; i < mock.length; i++) {
+      //     if (mock[i].name === titre) {
+      //       filterPerso = [mock[i]];
+      //       if (modal.classList.contains("d-none")) {
+      //         modal.classList.remove("d-none");
+      //         openModal.classList.add("d-none");
+      //       }
+      //       titleM.textContent = filterPerso[0].name;
+      //       imgM.innerHTML = `<img src="${filterPerso[0].img}"/img>`;
+      //       bodyM.textContent = filterPerso[0].text;
+      //     }
+      //   }
+      // });
     </script>
   </body>
 </html>

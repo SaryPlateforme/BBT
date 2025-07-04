@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+.modal {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.47);
+}
+.modal-container {
+  text-align: center;
+  margin: 0 auto;
+  background-color: lightgrey;
+  width: 30%;
+  padding: 20px;
+  border-radius: 30px;
+}
+.modal .modal-footer {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-style: italic;
+}
+.modal .close {
+  float: right;
+}
+.d-none {
+  display: none;
+}
+
+img {
+  width: 80%;
+}
+
+#closeModal{
+    float: right;
+}

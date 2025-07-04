@@ -13,3 +13,4 @@ closeModal.addEventListener("click", function () {
   modal.classList.add("d-none")
   openModal.classList.remove("d-none")
 });
+
