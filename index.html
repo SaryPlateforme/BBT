@@ -27,7 +27,7 @@
     />
   </head>
   <body>
-    <header class="header">
+    <!-- <header class="header">
       <nav class="nav">
         <span class="logo">BBT_</span>
         <button class="hamburger" id="hamburger">
@@ -42,24 +42,40 @@
           <li><a href="./html/victor.html">Victor</a></li>
         </ul>
       </nav>
-    </header>
+    </header> -->
 
     <main>
       <div class="container_photo">
-        <div id="test">Sary</div>
-        <div>Thibault</div>
-        <div>Victor</div>
-        <div>Kenzo</div>
-        <div>Mathieu</div>
+        <div class="modulebox">Sary</div>
+        <div class="modulebox">Thibault</div>
+        <div class="modulebox">Victor</div>
+        <div class="modulebox">Kenzo</div>
+        <div class="modulebox">Mathieu</div>
       </div>
     </main>
 
-    <footer class="footer">
+    <!-- <footer class="footer">
       <span>&copy; BBT tous droit réservés - 2025</span>
-    </footer>
+    </footer> -->
 
-    <script>
-      console.log(document.getElementById("test").innerText);
+    <script type="module">
+      import mock from "/js/mock.js";
+
+      let titre;
+
+      window.onclick = (e) => {
+        titre = e.target.innerText;
+
+        let filterPerso = [];
+
+        for (let i = 0; i < mock.length; i++) {
+          if (mock[i].name === titre) {
+            filterPerso = [mock[i]];
+          }
+        }
+
+        console.log(filterPerso);
+      };
     </script>
   </body>
 </html>

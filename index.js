@@ -11,21 +11,21 @@ document.addEventListener( "click", function (e) {
   false
 );
 
-// window.onclick = (e) => {
-//   let titre = e.target.innerText;
-//   console.log(titre);
-//   return titre;
-// };
+window.onclick = (e) => {
+  let titre = e.target.innerText;
+  console.log(titre);
+  return titre;
+};
 
-// let filterPerso = [];
+let filterPerso = [];
 
-// for (let i = 0; i < mock.length; i++) {
-//   if (mock[i].name === titre) {
-//     filterPerso = [mock[i]];
-//   }
-// }
+for (let i = 0; i < mock.length; i++) {
+  if (mock[i].name === titre) {
+    filterPerso = [mock[i]];
+  }
+}
 
-// console.log(filterPerso);
+console.log(filterPerso);
 
 // document.addEventListener('click', function(e) {
 //     e = e || window.e;
